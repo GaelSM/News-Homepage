@@ -1,0 +1,357 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+
+:root{
+--Soft-orange: hsl(35, 77%, 62%);
+--Soft-red: hsl(5, 85%, 63%);
+--Off-white: hsl(36, 100%, 99%);
+--Grayish-blue: hsl(233, 8%, 79%);
+--Dark-grayish-blue: hsl(236, 13%, 42%);
+--Very-dark-blue: hsl(240, 100%, 5%);
+--White: hsl(0, 0%, 100%);
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  user-select: none;
+  position: relative;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+}
+
+/* HEADDER */
+
+header{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 1.5rem;
+  background-color: white;
+}
+
+.logo{
+  height: 2rem;
+}
+
+.logo img{
+  height: 100%;
+}
+
+/* MENU HAMBURGUER */
+
+.menu__desktop{
+  display: none;
+}
+
+.menu__container{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.3);
+  transition: transform .3s ease;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.menu{
+  width: 65%;
+  height: 100vh;
+  background-color: var(--Off-white);
+  display: flex;
+  padding: 10rem 2rem;
+}
+
+.menu ul{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-size: 1.1rem;
+}
+
+.menu__icon{
+  width: 3rem;
+  height: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menu__icon span{
+  height: 20%;
+  background-color: var(--Very-dark-blue);
+  transition: transform .3s ease, opacity .3s ease;
+}
+
+/* JS */ 
+.disable__scroll{
+  overflow: hidden;
+}
+
+.rotate__one{
+  transform: rotate(45deg);
+  transform-origin: .2rem .3rem;
+}
+
+.move__two{
+  opacity: 0;
+  transform: translate(1rem);
+}
+
+.rotate__three{
+  transform: rotate(-45deg);
+  transform-origin: 1.1rem .3rem;
+}
+
+.active{
+  transform: translateX(-100%);
+}
+
+/* MAIN */
+
+main{
+  padding: 0 1.5rem 5rem;
+}
+
+main p{
+  font-size: .88rem;
+  color: var(--Dark-grayish-blue);
+  line-height: 1.7;
+}
+
+.web3 img{
+  width: 100%;
+}
+
+.title{
+  margin-top: 2rem;
+}
+
+.text{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.title h1{
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.text button{
+  width: 50vw;
+  padding: 1rem 0;
+  text-transform: uppercase;
+  background-color: var(--Soft-red);
+  color: var(--White);
+  border: none;
+  font-weight: 700;
+  letter-spacing: .25rem;
+}
+
+.news{
+  background-color: var(--Very-dark-blue);
+  padding: 2rem 1.5rem;
+  margin: 4rem 0;
+}
+
+.news h2{
+  color: var(--Soft-orange);
+  font-size: 2rem;
+}
+
+.new{
+  padding: 2rem 0;
+  border-bottom: .5px solid var(--Grayish-blue);
+}
+
+.new__three{
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.new h3{
+  font-size: 1.1rem;
+  color: var(--Grayish-blue);
+  font-weight: 800;
+  margin-bottom: .5rem;
+}
+
+.new p{
+  font-size: .85rem;
+}
+
+.popular{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.popular__item{
+  width: 100%;
+  height: 8rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.popular__item__img{
+  display: flex;
+}
+
+.popular__item__img img{
+  height: 100%;
+  object-fit: cover;
+}
+
+.popular__item__text{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.popular__item__text h2{
+  color: var(--Grayish-blue);
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.popular__item__text h3{
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--Very-dark-blue);
+}
+
+@media (min-width: 1000px){
+  .menu__container{
+    display: none;
+  }
+
+  .menu__icon{
+    display: none;
+  }
+
+  body{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    padding: 7rem 0;
+  }
+
+  .content{
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  header{
+    padding: 0;
+  }
+
+  .menu__desktop{
+    display: initial;
+  }
+
+  .menu__desktop ul{
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+  }
+
+  .menu__desktop ul li:hover, .popular__item__text h3:hover{
+    cursor: pointer;
+    color: var(--Soft-red);
+  }
+
+  main{
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "img  img news"
+    "title text news"
+    "popular popular popular";
+    gap: 2rem;
+  }
+
+  main p{
+    font-size: 1rem;
+  }
+
+  .web3{
+    grid-area: img;
+  }
+
+  .news{
+    grid-area: news;
+    margin: 0;
+  }
+
+  .news p{
+    font-size: 1rem;
+  }
+
+  .title{
+    display: flex;
+    grid-area: title;
+    margin: 0;
+  }
+
+  .title h1{
+    font-size: 3.5rem;
+  }
+
+  .text{
+    width: 100%;
+    grid-area: text;
+    margin: 0;
+    flex-direction: column;
+  }
+
+  .text button{
+    position: relative;
+    width: 50%;
+    overflow: hidden;
+    background-color: var(--Soft-red);
+    transition: background .8s ease;
+  }
+
+  .text button::before{
+    position: absolute;
+    left: -100%;
+    top: 0;
+    content: '';
+    background-color: var(--Very-dark-blue);
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transition: left .4s;
+  }
+
+  .text button:hover{
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  .text button:hover::before{
+    left: 0;
+  }
+
+
+  .popular{
+    margin-top: 3rem;
+    grid-area: popular;
+    flex-direction: row;
+    
+  }
+
+}
